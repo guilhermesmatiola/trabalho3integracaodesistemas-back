@@ -3,9 +3,9 @@
     "version": 2,
     "name": "integracao3",
     "builds": [
-      { "src": "./dist/src/server.js", "use": "@vercel/node" }
+      { "src": "src/server.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "./dist/src/server.js" }
+      { "src": "/(.*)", "dest": "src/server.js" }
     ]
   }
