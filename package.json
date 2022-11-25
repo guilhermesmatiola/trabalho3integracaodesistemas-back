@@ -8,7 +8,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "tsc && npx prisma migrate deploy",
+    "build": "tsc",
     "start": "node ./dist/src/server.js",
     "dev": "dotenv -e .env nodemon src/server.ts",
     "prisma": "prisma migrate dev",
