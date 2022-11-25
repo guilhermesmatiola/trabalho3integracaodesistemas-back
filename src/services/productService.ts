@@ -1,4 +1,4 @@
-import * as productRepository from '../repositories/productRepository';
+import * as productRepository from '../repositories/productRepository.js';
 
 async function findAll() {
   const products = await productRepository.findAll();

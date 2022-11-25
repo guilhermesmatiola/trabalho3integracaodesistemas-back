@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import prisma from '../config/database';
+import prisma from '../config/database.js';
 
-import productService from '../services/productService';
+import productService from '../services/productService.js';
 
 export async function getAll(req: Request, res: Response) {
   const products = await productService.findAll();

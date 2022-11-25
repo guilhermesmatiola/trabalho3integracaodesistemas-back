@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,28 +34,22 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-exports.__esModule = true;
-exports.getDisciplinaByCodigo = exports.insert = exports.findAll = void 0;
-var database_1 = __importDefault(require("./../config/database"));
-function findAll() {
+import prisma from './../config/database.js';
+export function findAll() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, database_1["default"].disciplinas.findMany()];
+                case 0: return [4 /*yield*/, prisma.disciplinas.findMany()];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
     });
 }
-exports.findAll = findAll;
-function insert(data) {
+export function insert(data) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, database_1["default"].disciplinas.create({ data: data })];
+                case 0: return [4 /*yield*/, prisma.disciplinas.create({ data: data })];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
@@ -64,15 +57,13 @@ function insert(data) {
         });
     });
 }
-exports.insert = insert;
-function getDisciplinaByCodigo(codigo) {
+export function getDisciplinaByCodigo(codigo) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, database_1["default"].disciplinas.findMany({ where: { codigo: codigo } })];
+                case 0: return [4 /*yield*/, prisma.disciplinas.findMany({ where: { codigo: codigo } })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
     });
 }
-exports.getDisciplinaByCodigo = getDisciplinaByCodigo;

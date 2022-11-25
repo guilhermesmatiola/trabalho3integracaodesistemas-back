@@ -1,6 +1,4 @@
-"use strict";
-exports.__esModule = true;
-function validateSchema(schema) {
+export default function validateSchema(schema) {
     return function (req, res, next) {
         var error = schema.validate(req.body).error;
         if (error) {
@@ -11,4 +9,3 @@ function validateSchema(schema) {
         next();
     };
 }
-exports["default"] = validateSchema;

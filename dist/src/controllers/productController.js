@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,18 +34,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-exports.__esModule = true;
-exports.getPorCodigo = exports.newDiscipline = exports.getAll = void 0;
-var productService_1 = __importDefault(require("../services/productService"));
-function getAll(req, res) {
+import productService from '../services/productService.js';
+export function getAll(req, res) {
     return __awaiter(this, void 0, void 0, function () {
         var products;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, productService_1["default"].findAll()];
+                case 0: return [4 /*yield*/, productService.findAll()];
                 case 1:
                     products = _a.sent();
                     res.status(200).send(products);
@@ -55,15 +49,14 @@ function getAll(req, res) {
         });
     });
 }
-exports.getAll = getAll;
-function newDiscipline(req, res) {
+export function newDiscipline(req, res) {
     return __awaiter(this, void 0, void 0, function () {
         var data;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     data = req.body;
-                    return [4 /*yield*/, productService_1["default"].newDiscipline(data)];
+                    return [4 /*yield*/, productService.newDiscipline(data)];
                 case 1:
                     _a.sent();
                     res.sendStatus(201);
@@ -72,15 +65,14 @@ function newDiscipline(req, res) {
         });
     });
 }
-exports.newDiscipline = newDiscipline;
-function getPorCodigo(req, res) {
+export function getPorCodigo(req, res) {
     return __awaiter(this, void 0, void 0, function () {
         var codigo, retorno;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     codigo = req.body.codigo;
-                    return [4 /*yield*/, productService_1["default"].findByCodigo(codigo)];
+                    return [4 /*yield*/, productService.findByCodigo(codigo)];
                 case 1:
                     retorno = _a.sent();
                     res.status(200).send(retorno);
@@ -89,4 +81,3 @@ function getPorCodigo(req, res) {
         });
     });
 }
-exports.getPorCodigo = getPorCodigo;

@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { getAll, newDiscipline, getPorCodigo } from '../controllers/productController';
-import validateSchema from '../middlewares/validateSchemaMiddleware';
-import productSchema from '../schemas/productSchema';
+import { getAll, newDiscipline, getPorCodigo } from '../controllers/productController.js';
+import validateSchema from '../middlewares/validateSchemaMiddleware.js';
+import productSchema from '../schemas/productSchema.js';
 
 const productRouter = Router();
 
